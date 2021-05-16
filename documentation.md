@@ -1,4 +1,4 @@
-![Flowtime.js](https://github.com/marcolago/flowtime.js/raw/master/assets/img/logo-black.png "Flowtime.js Logo")
+![Flowtime.js](https://github.com/marcolago/flowtime.js/raw/master/assets/img/logo-black.png 'Flowtime.js Logo')
 
 # Flowtime.js Documentation
 
@@ -6,13 +6,15 @@
 
 You need **[node.js](https://nodejs.org/)**, **[npm](https://www.npmjs.com/)** and **[grunt](http://gruntjs.com/)** installed in order to build a minified version of Flowtime.js and to autoprefix CSS files.  
 You can install dependencies by running
+
 ```
 npm install
 ```
 
 To create the minified build and autoprefixed CSS just run
+
 ```
-grunt 
+grunt
 ```
 
 ## How to Include Flowtime.js in Your Projects
@@ -25,12 +27,14 @@ If you want to contribute to Flowtime.js development you can write your own them
 
 **Include the required JavaScript files** at the bottom of your document, just before the `</body>` tag.
 You have to include both the `js/brav1toolbox.js` and `js/flowtime.js` files in this exact order:
+
 ```html
 <script src="js/brav1toolbox.js"></script>
 <script src="js/flowtime.js"></script>
 ```
 
 or the single `js/flowtime.min.js` file:
+
 ```html
 <script src="js/flowtime.min.js"></script>
 ```
@@ -42,37 +46,37 @@ All you have to do is wrap some elements in a `<div class="flowtime">` parent. T
 To better understand the markup take a look at this snippet:
 
 ```html
-    <div class="flowtime">
-      <div class="ft-section">
-        <div class="ft-page">Section 1 / Page 1</div>
-        <div class="ft-page">Section 1 / Page 2</div>
-      </div>
-    </div>
+<div class="flowtime">
+  <div class="ft-section">
+    <div class="ft-page">Section 1 / Page 1</div>
+    <div class="ft-page">Section 1 / Page 2</div>
+  </div>
+</div>
 ```
 
 If you want to use the alternate layout you have to add the class `ft-cross` to the Flowtime element and Flowtime.js takes care of the rest:
 
 ```html
-    <div class="flowtime ft-cross">
-      <div class="ft-section">
-        <div class="ft-page">Section 1 / Page 1</div>
-        <div class="ft-page">Section 1 / Page 2</div>
-      </div>
-    </div>
+<div class="flowtime ft-cross">
+  <div class="ft-section">
+    <div class="ft-page">Section 1 / Page 1</div>
+    <div class="ft-page">Section 1 / Page 2</div>
+  </div>
+</div>
 ```
 
 Every single page is a full window view — or a single slide if you prefer — and it’s a relative formatting context.
 Even if you have only single slides ordered in a row you have to nest the pages in sections; take a look at this markup which creates two slides one aside the other:
 
 ```html
-    <div class="flowtime">
-      <div class="ft-section">
-        <div class="ft-page">Section 1 / Page 1</div>
-      </div>
-      <div class="ft-section">
-        <div class="ft-page">Section 2 / Page 1</div>
-      </div>
-    </div>
+<div class="flowtime">
+  <div class="ft-section">
+    <div class="ft-page">Section 1 / Page 1</div>
+  </div>
+  <div class="ft-section">
+    <div class="ft-page">Section 2 / Page 1</div>
+  </div>
+</div>
 ```
 
 ### Titles and Pages URL
@@ -88,27 +92,28 @@ You can add the `data-id` attribute both to `ft-section` and to `ft-page` elemen
 To better understand the use of data attributes here it is an example:
 
 ```html
-    <div class="flowtime">
-      <div class="ft-section" data-id="section-1">
-        <div class="ft-page" data-id="page-1">
-            <h1>Heading Title</h1>
-            When navigating to this page the title will be "site name | Heading Title"
-            and the URL will be "http://site_URL/#/section-1/page-1/"
-        </div>
-      </div>
-      <div class="ft-section" data-title="Section 2 Title" data-id="section-2">
-        <div class="ft-page" data-title="Page 1 Title" data-id="page-1">
-            When navigating to this page the title will be "site name | Section 2 Title | Page 1 Title"
-            and the URL will be "http://site_URL/#/section-2/page-1/"
-        </div>
-      </div>
-      <div class="ft-section"data-id="section-3">
-        <div class="ft-page" data-title="Page Title" data-id="page-1">
-            When navigating to this page the title will be "site name | Page Title"
-            and the URL will be "http://site_URL/#/section-3/page-1/"
-        </div>
-      </div>
+<div class="flowtime">
+  <div class="ft-section" data-id="section-1">
+    <div class="ft-page" data-id="page-1">
+      <h1>Heading Title</h1>
+      When navigating to this page the title will be "site name | Heading Title"
+      and the URL will be "http://site_URL/#/section-1/page-1/"
     </div>
+  </div>
+  <div class="ft-section" data-title="Section 2 Title" data-id="section-2">
+    <div class="ft-page" data-title="Page 1 Title" data-id="page-1">
+      When navigating to this page the title will be "site name | Section 2
+      Title | Page 1 Title" and the URL will be
+      "http://site_URL/#/section-2/page-1/"
+    </div>
+  </div>
+  <div class="ft-section" data-id="section-3">
+    <div class="ft-page" data-title="Page Title" data-id="page-1">
+      When navigating to this page the title will be "site name | Page Title"
+      and the URL will be "http://site_URL/#/section-3/page-1/"
+    </div>
+  </div>
+</div>
 ```
 
 ### Fragments
@@ -116,14 +121,17 @@ To better understand the use of data attributes here it is an example:
 If you want to reveal single elements of a page just add the class `ft-fragment` on the elements you want to discover step by step. Here is an example.
 
 ```html
-    <div class="flowtime">
-      <div class="ft-section" data-title="Section 1 Title" data-id="section-1">
-        <div class="ft-page" data-title="Page 1 Title" data-id="page-1">
-            <p>First Paragraph; this text is visible from start.</p>
-            <p class="ft-fragment">This paragraph shows up only when you navigate forward and disappears when you navigate back.</p>
-        </div>
-      </div>
+<div class="flowtime">
+  <div class="ft-section" data-title="Section 1 Title" data-id="section-1">
+    <div class="ft-page" data-title="Page 1 Title" data-id="page-1">
+      <p>First Paragraph; this text is visible from start.</p>
+      <p class="ft-fragment">
+        This paragraph shows up only when you navigate forward and disappears
+        when you navigate back.
+      </p>
     </div>
+  </div>
+</div>
 ```
 
 You can also add some classes to trigger special behaviours for fragments.
@@ -135,15 +143,20 @@ The `shy` class completely hides a fragment when it lose the focus; use: `<p cla
 If you want to enable the parallax effect on some elements add a `parallax` class to these elements and, optionally, set the parallax distance value adding a `data-parallax` attribute specifying the `x` and `y` values separated by a comma. If you don't specify a `data-parallax` attribute the default lengths will be used.
 
 ```html
-    <div class="flowtime">
-      <div class="ft-section" data-id="section-1">
-        <div class="ft-page" data-id="page-1">
-            <p class="parallax">Parallaxed element. Will use the default lengths.</p>
-            <p class="parallax" data-parallax="100,150">Parallaxed element. Will use the `data-parallax` attribute values.</p>
-            <p class="parallax" data-parallax="200">Parallaxed element. Will use the `data-parallax` attribute value; x and y will be the same length.</p>
-        </div>
-      </div>
+<div class="flowtime">
+  <div class="ft-section" data-id="section-1">
+    <div class="ft-page" data-id="page-1">
+      <p class="parallax">Parallaxed element. Will use the default lengths.</p>
+      <p class="parallax" data-parallax="100,150">
+        Parallaxed element. Will use the `data-parallax` attribute values.
+      </p>
+      <p class="parallax" data-parallax="200">
+        Parallaxed element. Will use the `data-parallax` attribute value; x and
+        y will be the same length.
+      </p>
     </div>
+  </div>
+</div>
 ```
 
 ## Javascript API
@@ -153,7 +166,7 @@ Flowtime.js has a lot of useful **configuration APIs**, for customizing the expe
 ### Configuration API
 
 ```javascript
-Flowtime.start();
+Flowtime.start()
 ```
 
 Starts the application logic with custom options. Calling this method is optional (but highly recommended) unless you change some configuration parameters.
@@ -248,16 +261,17 @@ Flowtime.loop(Boolean loop);
 
 Default `false`. If true you can loop the navigation both for the sections and for the pages so you can back to the start of the presentation navigating forward from the last page.
 
-```javascript```
+`javascript`
 Flowtime.clicker(Boolean clicker);
-```
+
+````
 
 If passed `true` PageUp and PageDown keys are reconfigured to go to the previous and next page instead to the first and the last page of the section.
 This option useful if you use some wireless presenter like the Logitech R400; see issue ([#15](https://github.com/marcolago/flowtime.js/issues/15)) for more information.
 
 ```javascript```
 Flowtime.setCrossDirection(Boolean cross);
-```
+````
 
 Force the cross direction layout for sections and pages at runtime.
 Pass `true`to use the optional horizontal layout or pass `false` to use the standard vertical layout.
@@ -431,19 +445,19 @@ Flowtime.showOverview(Boolean show, [Boolean back]);
 Sets the overview mode to the given state. See `Flowtime.toggleOverview([Boolean back]);`.
 
 ```javascript
-Flowtime.play();
+Flowtime.play()
 ```
 
 Starts the autoplay timer with the configured values (see `Flowtime.autoplay()` method) or with the default ones.
 
 ```javascript
-Flowtime.pause();
+Flowtime.pause()
 ```
 
 Pauses the autoplay timer without resetting the delay.
 
 ```javascript
-Flowtime.stop();
+Flowtime.stop()
 ```
 
 Stops the autoplay timer resetting the delay.
@@ -511,49 +525,49 @@ The page navigation is enabled by default.
 ### Data API
 
 ```javascript
-Flowtime.getSection();
+Flowtime.getSection()
 ```
 
 Gets a reference to the current section HTML Element.
 
 ```javascript
-Flowtime.getPage();
+Flowtime.getPage()
 ```
 
 Gets a reference to the current page HTML Element.
 
 ```javascript
-Flowtime.getSectionIndex();
+Flowtime.getSectionIndex()
 ```
 
 Gets the index starting at `0` of the current section.
 
 ```javascript
-Flowtime.getPageIndex();
+Flowtime.getPageIndex()
 ```
 
 Gets the index starting at `0` of the current page.
 
 ```javascript
-Flowtime.getPrevSection();
+Flowtime.getPrevSection()
 ```
 
 Gets a reference to the previous section HTML Element.
 
 ```javascript
-Flowtime.getNextSection();
+Flowtime.getNextSection()
 ```
 
 Gets a reference to the next section HTML Element.
 
 ```javascript
-Flowtime.getPrevPage();
+Flowtime.getPrevPage()
 ```
 
 Gets a reference to the previous page HTML Element.
 
 ```javascript
-Flowtime.getNextPage();
+Flowtime.getNextPage()
 ```
 
 Gets a reference to the next page HTML Element.
@@ -670,7 +684,7 @@ e.isLoopable
 If you prefer setting a callback instead of register an event to get the navigation data object you can do it with the onNavigation method:
 
 ```javascript
-Flowtime.onNavigation(callback);
+Flowtime.onNavigation(callback)
 ```
 
 `callback` is the function you want to be called every time Flowtime.js navigate.
@@ -686,11 +700,10 @@ You can change the way these parts appears editing or overwriting some CSS prope
 In the `flowtimenavigation` event handler calculate the progress in % using this formula:
 
 ```javascript
-    function navigationHandler(e)
-    {
-      var value = Math.round(e.progress * 100 / e.total);
-      console.log('Completion: ' + value + '%');
-    }
+function navigationHandler(e) {
+  var value = Math.round((e.progress * 100) / e.total)
+  console.log('Completion: ' + value + '%')
+}
 ```
 
 The first page of the first section **ever returns 0 as progress value**.
@@ -701,19 +714,20 @@ The first page of the first section **ever returns 0 as progress value**.
 Every animation in Flowtime.js is managed with native CSS3 transitions so if you would customize the fragment animation (and you want to do this on a website, I know) just edit the following CSS classes to override the transitions or set the default value of the `opacity` to `1`.
 
 ```css
-  .ft-fragment {
-    opacity: 0;
-    transition: all 0.3s cubic-bezier(.77, .10, .22, 1);
-  }
+.ft-fragment {
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.77, 0.1, 0.22, 1);
+}
 
-  .ft-fragment.revealed, .ft-fragment.revealed-temp {
-    opacity: 1;
-  }
+.ft-fragment.revealed,
+.ft-fragment.revealed-temp {
+  opacity: 1;
+}
 
-  .ft-overview .ft-default-progress {
-    opacity: 0;
-    pointer-events: none;
-  }
+.ft-overview .ft-default-progress {
+  opacity: 0;
+  pointer-events: none;
+}
 ```
 
 ### Customize the Look of Pages in Overview Mode
@@ -721,39 +735,39 @@ Every animation in Flowtime.js is managed with native CSS3 transitions so if you
 To customize the way the thumbnails in overview mode look when idle, hovered and higlighted edit or override this CSS classes:
 
 ```css
-  /* default progress page thumb */
+/* default progress page thumb */
 
-  .ft-page-thumb {
-    box-sizing: border-box;
-    width: 1rem;
-    height: 0.7rem;
-    margin-right: 1px;
-    margin-bottom: 1px;
-    background-color: rgba(0,0,0,0.7);
-    cursor: pointer;
-    transition: background-color 0.5s;
-  }
+.ft-page-thumb {
+  box-sizing: border-box;
+  width: 1rem;
+  height: 0.7rem;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  background-color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
 
-  .ft-page-thumb:hover {
-    background-color: rgba(255,255,255,0.7);
-  }
+.ft-page-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
-  .ft-page-thumb.actual {
-    background-color: rgba(255,255,255,0.5);
-    border: 1px solid #ffffff;
-  }
+.ft-page-thumb.actual {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ffffff;
+}
 
-  /* overview mode page highlighting */
+/* overview mode page highlighting */
 
-  .ft-overview .ft-page.actual {
-    opacity: 0.3;
-  }
+.ft-overview .ft-page.actual {
+  opacity: 0.3;
+}
 
-  .ft-overview .ft-page.hilite {
-    opacity: 1;
-  }
+.ft-overview .ft-page.hilite {
+  opacity: 1;
+}
 
-  .ft-overview .ft-page:hover {
-    opacity: 1;
-  }
+.ft-overview .ft-page:hover {
+  opacity: 1;
+}
 ```

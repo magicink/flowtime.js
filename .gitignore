@@ -12,3 +12,12 @@ js/brav1toolbox.min.js
 *.sublime-project
 *.sublime-workspace
 *.dev.*
+
+# IDEs
+.idea/
+.vs/
+
+# Artifacts
+dist/*
+coverage/
+.husky/

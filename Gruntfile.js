@@ -1,5 +1,5 @@
-module.exports = function(grunt) {
-  'use strict';
+module.exports = function (grunt) {
+  'use strict'
   // Project configuration
   grunt.initConfig({
     // Metadata
@@ -10,10 +10,7 @@ module.exports = function(grunt) {
         files: [
           {
             dest: '.tmp/concat/js/flowtime.concat.js',
-            src: [
-              'js/brav1toolbox.js',
-              'js/flowtime.js'
-            ]
+            src: ['js/brav1toolbox.js', 'js/flowtime.js']
           }
         ]
       }
@@ -23,7 +20,6 @@ module.exports = function(grunt) {
         preserveComments: 'some'
       },
       generated: {
-        
         files: [
           {
             dest: 'js/flowtime.min.js',
@@ -49,14 +45,14 @@ module.exports = function(grunt) {
         dest: 'css/'
       }
     }
-  });
+  })
 
   // These plugins provide necessary tasks
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-concat')
+  grunt.loadNpmTasks('grunt-contrib-uglify')
+  grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-autoprefixer')
 
   // Default task
-  grunt.registerTask('default', ['autoprefixer', 'concat', 'uglify']);
-};
+  grunt.registerTask('default', ['autoprefixer', 'concat', 'uglify'])
+}
